@@ -1,6 +1,12 @@
 import streamlit as st
 import google.generativeai as genai
 
+# Configure the API
+genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
+
+# Create the model
+model = genai.GenerativeModel('gemini-pro')
+
 # Streamlit page config
 st.set_page_config(
     page_title="Medical AI Chatbot",
